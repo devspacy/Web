@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Generator Password</h1>
+
+<textarea id="text" rows="10" cols="40"></textarea>
+
+<input type="number" id="i" value="50">
+
+<button type="button" onclick="gen()">Generate!</button>
+
+<script>
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+
+function gen() {
+  document.getElementById("text").innerHTML = makeid(document.getElementById("i").value);
+}
+</script>
+
+</body>
+</html>
